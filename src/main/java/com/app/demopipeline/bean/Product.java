@@ -1,10 +1,11 @@
 package com.app.demopipeline.bean;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
+@Document(collection = "products")
 public class Product {
 
     @Id
@@ -13,7 +14,14 @@ public class Product {
     private String label;
     private BigDecimal price;
     private String uom;
-    private LocalDateTime creationDate;
+    private LocalDateTime creationDate = LocalDateTime.now();
+
+    public Product(String code, String label, BigDecimal price, String uom) {
+        this.code = code;
+        this.label = label;
+        this.price = price;
+        this.uom = uom;
+    }
 
     public String getId() {
         return id;
@@ -57,10 +65,6 @@ public class Product {
 
     public LocalDateTime getCreationDate() {
         return creationDate;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
     }
 
     @Override
