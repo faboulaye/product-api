@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      # Mongo database URI. When set, host and port are
+      uri: mongodb://mongo/demo
