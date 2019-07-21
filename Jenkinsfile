@@ -11,7 +11,6 @@ pipeline {
                 sh 'mvn test-compile'
             }
         }
-
         stage('Unit Test') {
             steps {
                 sh 'mvn surefire:test'
