@@ -21,16 +21,7 @@ pipeline {
                 }
             }
         }
-        stage('Integration Test') {
-            steps {
-                sh 'mvn failsafe:integration-test failsafe:verify'
-            }
-            post {
-                success {
-                    junit 'target/failsafe-reports/*.xml'
-                }
-            }
-        }
+
 
         stage('Deploy') {
             steps {
