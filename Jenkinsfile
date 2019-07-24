@@ -11,26 +11,28 @@ pipeline {
                 sh 'mvn test-compile'
             }
         }
-        parallel {
-          stage('Unit Test') {
-              steps {
-                  sh 'mvn surefire:test'
-              }
-              post {
-                  success {
-                      junit 'target/surefire-reports/*.xml'
-                  }
-              }
-          }
-          stage('Integration Test') {
-              steps {
-                  sh 'mvn failsafe:integration-test'
-              }
-              post {
-                  success {
-                      junit 'target/failsafe-reports/*.xml'
-                  }
-              }
+        stage('Test') {
+          parallel {
+            stage('Unit Test') {
+                steps {
+                    sh 'mvn surefire:test'
+                }
+                post {
+                    success {
+                        junit 'target/surefire-reports/*.xml'
+                    }
+                }
+            }
+            stage('Integration Test') {
+                steps {
+                    sh 'mvn failsafe:integration-test'
+                }
+                post {
+                    success {
+                        junit 'target/failsafe-reports/*.xml'
+                    }
+                }
+            }
           }
         }
         stage('Deploy') {
