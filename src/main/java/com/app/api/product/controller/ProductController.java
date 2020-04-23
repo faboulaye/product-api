@@ -1,7 +1,7 @@
-package com.app.demopipeline.controller;
+package com.app.api.product.controller;
 
-import com.app.demopipeline.bean.Product;
-import com.app.demopipeline.repostitory.ProductRepository;
+import com.app.api.product.bean.Product;
+import com.app.api.product.repostitory.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

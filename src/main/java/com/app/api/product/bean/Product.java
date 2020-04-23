@@ -1,4 +1,4 @@
-package com.app.demopipeline.bean;
+package com.app.api.product.bean;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

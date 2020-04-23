@@ -1,6 +1,6 @@
-package com.app.demopipeline.utils;
+package com.app.api.product.utils;
 
-import com.app.demopipeline.bean.Product;
+import com.app.api.product.bean.Product;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
